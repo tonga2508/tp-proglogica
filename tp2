@@ -1,7 +1,7 @@
 Algoritmo presupuestos
 	
 	Definir cant_noches, precio_por_persona, precio_por_noche, promo1, promo2, Caso_1, Caso_2, Caso_3 Como Entero;
-  precio_por_noche <- 3000;
+        precio_por_noche <- 3000;
 	promo1 <- 3000 * 0.10;
 	promo2 <- 3000 * 0.15;
 	Caso_1 <- 1;
@@ -31,7 +31,7 @@ Algoritmo presupuestos
 			precio_por_persona = precio_por_noche - promo2;
 			Escribir "El precio por persona es:  ", precio_por_persona, "$";
 		De Otro Modo:
-			Escribir "En este momento no hay promocion para esa cantidad de noches";
+			Escribir "En este momento no hay promo para esa cantidad de noches";
 	FinSegun
 	
 FinAlgoritmo
