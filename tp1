@@ -1,0 +1,70 @@
+Proceso TablaNutricional
+	
+	Definir nombre_de_alimento Como Cadena;
+	Definir porcion, carbohidratos, proteinas, grasas_saturadas, grasas_trans, grasas_totales, sodio, fibras Como Real;
+	Definir dieta, vd_carbohidratos, vd_proteinas, vd_grasas_saturadas, vd_grasas_trans, vd_grasas_totales, vd_sodio, vd_fibras Como Real;
+	
+	//dieta 200kcal
+	dieta = 2000; //dieta 2000kcal
+	vd_carbohidratos = 300; //gramos
+	vd_proteinas = 75; //gramos
+	vd_grasas_saturadas = 22; //gramos
+	vd_grasas_totales = 55; //gramos
+	vd_fibras = 25; //gramos
+	vd_sodio = 2400; //miligramos
+	
+	
+	//entrada
+	Escribir "Ingresar el Nombre del Producto: "; //pregunto alimento
+	Leer nombre_de_alimento; 
+	
+	Escribir  "Ingrese la Porcion en Gramos: "; //porcion en gramos
+	Leer porcion; 
+	
+	Escribir "Ingrese los Carbohidratos en Gramos: "; //pregunto cantidad de carbohidratos
+	Leer carbohidratos;
+	
+	Escribir "Ingrese las Proteinas en Gramos: "; //preguntamos cantidad de proteinas
+	Leer proteinas;
+	
+	Escribir "Ingrese las Grasas Totales en Gramos: "; //preguntamos grasas_totales
+	Leer grasas_totales;
+	
+	Escribir "Ingrese las Grasas Saturadas en Gramos: "; //preguntamos cantidad de grasas_saturadas
+	Leer grasas_saturadas;
+	
+	Escribir "Ingrese las Grasas Trans en Gramos: "; //preguntamos cantidad de grasas_trans
+	Leer grasas_trans;
+	
+	Escribir "Ingrese las Fibras Totales en Gramos: "; //preguntamos cantidad de fibras
+	Leer fibras;
+	
+	Escribir "Ingrese el Sodio Total en Miligramos: "; //preguntamos cantidad de sodio
+	Leer sodio;
+	
+	Escribir "";
+	Escribir "";
+	//Salida
+	
+	Escribir "*****************************************************";
+	Escribir nombre_de_alimento;
+	Escribir "*****************************************************";
+	Escribir "INFORMACION NUTRICIONAL: ";
+	Escribir "Porcion: ", porcion, "g"; //imprime en pantalla los gramos de la porcion ingresados al principio
+	Escribir "Cantidad por porcion: ", "                       ","% VD(*)";  
+	Escribir "Valor Energetico: ", REDON((carbohidratos*4) + (proteinas*4) + (grasas_totales*9)),"Kcal","                       ", REDON(REDON((carbohidratos*4) + (proteinas*4) + (grasas_totales*9)) / dieta * 100), "%"; //calculamos valor energetico teniendo en cuenta facton Atwater
+	Escribir "Carbohidratos:     ", carbohidratos," g","                         ", redon((carbohidratos / vd_carbohidratos) * 100), "%";	//calculo % vd_carbohidratos en base a tabla
+	Escribir "Proteinas:         ", proteinas," g", "                         ", redon((proteinas / vd_proteinas) * 100), "%"; //calculo % vd_proteinas en base a tabla
+	Escribir "Grasas Totales:    ", grasas_totales," g","                      ", redon((grasas_totales / vd_grasas_totales) * 100), "%"; //calculo % vd_grasas_totales en base a tabla
+	Escribir "Grasas Saturadas:  ", grasas_saturadas," g","                        ", redon((grasas_saturadas / vd_grasas_saturadas) * 100), "%"; //calculo % vd_grasas_saturadas en base a tabla
+	Escribir "Grasas Trans:      ", grasas_trans," g","                       ","-";
+	Escribir "Fibras:            ", fibras," g","                         ", redon((fibras / vd_fibras) * 100), "%"; //calculo % vd_fibras en base a tabla
+	Escribir "Sodio:            ", sodio," mg","                        ", redon((sodio / vd_sodio) * 100), "%"; //calculo % vd_sodio en base a tabla.
+	Escribir "";
+	Escribir "(*) % Valores diarios en base a una dieta ";
+	Escribir "de 2000 Kcal. Sus valores diarios pueden";
+	Escribir "ser mayores o menores dependiendo de sus";
+	Escribir "necesidades energeticas";
+	
+	
+FinProceso
