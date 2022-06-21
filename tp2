@@ -1,0 +1,37 @@
+Algoritmo presupuestos
+	
+	Definir cant_noches, precio_por_persona, precio_por_noche, promo1, promo2, Caso_1, Caso_2, Caso_3 Como Entero;
+  precio_por_noche <- 3000;
+	promo1 <- 3000 * 0.10;
+	promo2 <- 3000 * 0.15;
+	Caso_1 <- 1;
+	Caso_2 <- 2;
+	Caso_3 <- 3;
+	
+	Escribir "Escapada de Fin de Semana Largo";
+	Escribir "Cabanas Mi Cielo";
+	Escribir "Promocion:  ";
+	Escribir "1 Noche","        ","$3000";
+	Escribir "2 Noches","       ","-10%";
+	Escribir "3 Noches","       ","-15%";
+	
+	Escribir "Ingrese la cantidad de noches que desea disfrutar en el complejo";
+	Leer cant_noches;
+	
+	Segun cant_noches Hacer
+		Caso_1:
+			precio_por_persona = precio_por_noche;
+			Escribir "El precio por persona es: ", precio_por_persona, "$";
+			
+		Caso_2: 
+			precio_por_persona = precio_por_noche - promo1;
+			Escribir "El precio por persona es:  ", precio_por_persona, "$";
+			
+		Caso_3:
+			precio_por_persona = precio_por_noche - promo2;
+			Escribir "El precio por persona es:  ", precio_por_persona, "$";
+		De Otro Modo:
+			Escribir "En este momento no hay promocion para esa cantidad de noches";
+	FinSegun
+	
+FinAlgoritmo
