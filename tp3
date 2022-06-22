@@ -1,49 +1,47 @@
-Algoritmo piedra_papel_o_Tijera
+Algoritmo ppt
 	
-	Definir PuntajeComputador,PuntajeUsuario,usuario,computador Como Entero;
+	Definir PuntajeEniac,PuntajeUsuario,usuario,Eniac Como Entero;
 	
-	PuntajeComputador<-0;
+	PuntajeEniac<-0; 
 	PuntajeUsuario<-0;
+	Escribir "Hola mi nombre es Eniac y vamos a jugar al piedra papel o tijera.";
+	Escribir "";
 	Escribir "Ingresa 1 para elegir Piedra";
 	Escribir "Ingresa 2 para elegir Papel";
 	Escribir "Ingresa 3 para elegir Tijera";
 	Escribir "Ingresa 0 si deseas salir del juego";
 	Leer usuario;
 	
-	Mientras PuntajeComputador < 3 & PuntajeUsuario < 3 & usuario <> 0 Hacer
-		computador <- azar(3)+1;
+	Limpiar Pantalla;
+	
+	Mientras PuntajeEniac < 3 & PuntajeUsuario < 3 & usuario <> 0 Hacer 
+		Eniac <- azar(3)+1; //funcion para generar un numero random se utiliza el +1 para que no exista 0
 		
-		Si usuario = computador  Entonces
+		Si usuario = Eniac  Entonces
 			Escribir "Empate";
 		SiNo
-			Si usuario = 1 & computador =2 Entonces
-				Escribir "Gano Computador";
-				
-				PuntajeComputador<-PuntajeComputador+1;
+			Si usuario = 1 & Eniac =2 Entonces
+				Escribir "Gano Eniac";
+				PuntajeEniac<-PuntajeEniac+1;
 			SiNo
-				Si usuario = 1 & computador =3 Entonces
+				Si usuario = 1 & Eniac =3 Entonces
 					Escribir "Gana Usuario";
-					
 					PuntajeUsuario<-PuntajeUsuario+1;
 				SiNo
-					Si usuario = 2 & computador =1 Entonces
+					Si usuario = 2 & Eniac =1 Entonces
 						Escribir "Gana Usuario";
-						
 						PuntajeUsuario<-PuntajeUsuario+1;
 					SiNo
-						Si usuario = 2 & computador =3 Entonces
-							Escribir "Gano Computador";
-							
-							PuntajeComputador<-PuntajeComputador+1;
+						Si usuario = 2 & Eniac =3 Entonces
+							Escribir "Gano Eniac";
+							PuntajeEniac<-PuntajeEniac+1;
 						SiNo
-							Si usuario = 3 & computador =1 Entonces
-								Escribir "Gano Computador";
-								
-								PuntajeComputador<-PuntajeComputador+1;
+							Si usuario = 3 & Eniac =1 Entonces
+								Escribir "Gano Eniac";
+								PuntajeEniac<-PuntajeEniac+1;
 							SiNo
-								Si usuario = 3 & computador =2 Entonces
+								Si usuario = 3 & Eniac =2 Entonces
 									Escribir "Gana Usuario";
-									
 									PuntajeUsuario<-PuntajeUsuario+1;
 								SiNo
 									Escribir "Ingrese una opcion correcta";
@@ -54,39 +52,36 @@ Algoritmo piedra_papel_o_Tijera
 				FinSi
 			FinSi
 		FinSi
-		
+//#####################################PaRA saber que se eligio#########################################################
 		Si usuario = 1 Entonces
-			
 			Escribir "Usuario eligio Piedra";
 		SiNo
 			Si usuario =2 Entonces
 				Escribir "Usuario eligio Papel";
-		SiNo
+			SiNo
 				Escribir "Usuario eligio Tijera";
 			FinSi
-	FinSi		
+		FinSi		
 		
-		Si computador =1 Entonces
-			Escribir " y computador eligio Piedra";
+		Si Eniac = 1 Entonces
+			Escribir " Enica eligio Piedra";
 		SiNo
-			Si computador =2 Entonces
-				Escribir "y computador eligio Papel";
+			Si Eniac =2 Entonces
+				Escribir "Eniac eligio Papel";
 			SiNo
-				Escribir "y computador eligio Tijera";
+				Escribir "Eniac eligio Tijera";
 			FinSi
 		FinSi
-		
-		Escribir "Usuario: ", PuntajeUsuario, "   Computador: ", PuntajeComputador;
-		
+//#######################################################################################################################		
+		Escribir "Usuario: ", PuntajeUsuario, "   Eniac: ", PuntajeEniac;    //imprime en pantalla puntaje
+	
 		Si PuntajeUsuario = 3 Entonces
-			
 			Escribir "El usuario ha Ganado";
-			
 		SiNo
-			Si PuntajeComputador = 3 Entonces
+			Si PuntajeEniac = 3 Entonces
 				Escribir "El computador ha Ganado";
 			SiNo
-				
+				Escribir "";
 				Escribir "Ingresa 1 para elegir Piedra";
 				Escribir "Ingresa 2 para elegir Papel";
 				Escribir "Ingresa 3 para elegir Tijera";
