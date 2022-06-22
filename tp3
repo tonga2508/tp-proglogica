@@ -1,0 +1,100 @@
+Algoritmo piedra_papel_o_Tijera
+	
+	Definir PuntajeComputador,PuntajeUsuario,usuario,computador Como Entero;
+	
+	PuntajeComputador<-0;
+	PuntajeUsuario<-0;
+	Escribir "Ingresa 1 para elegir Piedra";
+	Escribir "Ingresa 2 para elegir Papel";
+	Escribir "Ingresa 3 para elegir Tijera";
+	Escribir "Ingresa 0 si deseas salir del juego";
+	Leer usuario;
+	
+	Mientras PuntajeComputador < 3 & PuntajeUsuario < 3 & usuario <> 0 Hacer
+		computador <- azar(3)+1;
+		
+		Si usuario = computador  Entonces
+			Escribir "Empate";
+		SiNo
+			Si usuario = 1 & computador =2 Entonces
+				Escribir "Gano Computador";
+				
+				PuntajeComputador<-PuntajeComputador+1;
+			SiNo
+				Si usuario = 1 & computador =3 Entonces
+					Escribir "Gana Usuario";
+					
+					PuntajeUsuario<-PuntajeUsuario+1;
+				SiNo
+					Si usuario = 2 & computador =1 Entonces
+						Escribir "Gana Usuario";
+						
+						PuntajeUsuario<-PuntajeUsuario+1;
+					SiNo
+						Si usuario = 2 & computador =3 Entonces
+							Escribir "Gano Computador";
+							
+							PuntajeComputador<-PuntajeComputador+1;
+						SiNo
+							Si usuario = 3 & computador =1 Entonces
+								Escribir "Gano Computador";
+								
+								PuntajeComputador<-PuntajeComputador+1;
+							SiNo
+								Si usuario = 3 & computador =2 Entonces
+									Escribir "Gana Usuario";
+									
+									PuntajeUsuario<-PuntajeUsuario+1;
+								SiNo
+									Escribir "Ingrese una opcion correcta";
+								FinSi
+							FinSi
+						FinSi
+					FinSi
+				FinSi
+			FinSi
+		FinSi
+		
+		Si usuario = 1 Entonces
+			
+			Escribir "Usuario eligio Piedra";
+		SiNo
+			Si usuario =2 Entonces
+				Escribir "Usuario eligio Papel";
+		SiNo
+				Escribir "Usuario eligio Tijera";
+			FinSi
+	FinSi		
+		
+		Si computador =1 Entonces
+			Escribir " y computador eligio Piedra";
+		SiNo
+			Si computador =2 Entonces
+				Escribir "y computador eligio Papel";
+			SiNo
+				Escribir "y computador eligio Tijera";
+			FinSi
+		FinSi
+		
+		Escribir "Usuario: ", PuntajeUsuario, "   Computador: ", PuntajeComputador;
+		
+		Si PuntajeUsuario = 3 Entonces
+			
+			Escribir "El usuario ha Ganado";
+			
+		SiNo
+			Si PuntajeComputador = 3 Entonces
+				Escribir "El computador ha Ganado";
+			SiNo
+				
+				Escribir "Ingresa 1 para elegir Piedra";
+				Escribir "Ingresa 2 para elegir Papel";
+				Escribir "Ingresa 3 para elegir Tijera";
+				Escribir "Ingresa 0 si deseas salir del juego";
+				Leer usuario;
+				
+				Limpiar Pantalla;
+			FinSi
+		FinSi	
+	FinMientras
+FinAlgoritmo
