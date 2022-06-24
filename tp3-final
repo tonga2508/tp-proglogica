@@ -1,0 +1,78 @@
+Proceso ppt
+	Definir papel, tijera, piedra, ganar, perder, empate, puntos_j1, puntos_j2, eleccion_j1,eleccion_j2, resultado Como Entero;
+	Definir tablero Como Entero;
+	Definir finJuego Como Logico;
+	Definir nombre_j1 Como Caracter;
+	
+	papel <- 0;
+	tijera <- 1;
+	piedra <- 2;
+	ganar <- 1;
+	empate <- 0;
+	perder <- -1;
+	
+	Dimension tablero[3,3];
+	tablero[0,0] <- 0;
+	tablero[0,1] <- -1;
+	tablero[0,2] <- 1;
+	tablero[1,0] <- 1;
+	tablero[1,1] <- 0;
+	tablero[1,2] <- -1;
+	tablero[2,0] <- -1;
+	tablero[2,1] <- 1;
+	tablero[2,2] <- 0;
+	
+	puntos_j1 <-0;
+	puntos_j2 <-0;
+	
+	finJuego <- falso;
+	
+	
+	Escribir "Hola mi nombre es Eniac y vamos a jugar al piedra papel o tijera.";
+	Escribir "Tu nombre cual es: ";
+	leer nombre_j1;
+	
+	Mientras no finJuego Hacer
+		eleccion_j2 <- azar(3);
+		Escribir "Eniac eligio: ",eleccion_j2;
+		Escribir " ",nombre_j1, ": elige tu mano 0=papel, 1=tijera; 2=piedra";
+		leer eleccion_j1;
+		
+		
+		
+		resultado <- tablero[eleccion_j1, eleccion_j2];
+		
+		Segun resultado hacer
+			1:
+				puntos_j1 <- puntos_j1 + 1;
+				Escribir " ",nombre_j1, "gana la mano";
+			-1:
+				puntos_j2 <- puntos_j2 + 1;
+				Escribir "Eniac gana la mano";
+			De Otro Modo:
+				Escribir "Empate, no se conceden puntos";
+		FinSegun
+		
+		Escribir "Puntuacion ",nombre_j1,": ",puntos_j1;
+		Escribir "Puntuacion Eniac: ", puntos_j2;
+		
+		Borrar Pantalla;
+		
+		Si puntos_j1=3 o puntos_j2=3 Entonces
+			finJuego <- verdadero;
+		FinSi
+	FinMientras
+	
+	Escribir "Puntuacion Final: ";
+	Escribir "Puntuacion ",nombre_j1, ": ", puntos_j1;
+	Escribir "Puntuacion Eniac: ", puntos_j2;
+	
+	Si puntos_j1 =3 Entonces
+		Escribir "Gana ", nombre_j1;
+	SiNo
+		Escribir "Gana Eniac";
+	FinSi
+	
+	
+	
+FinProceso
